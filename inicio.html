@@ -66,15 +66,26 @@
     </div>
 
     <script>
-      function startGame() {
+      async function startGame() {
         // alert("Comenzando nueva partida...");
         // Aquí iría la lógica para iniciar el juego
+
+        // Crear un nuevo objeto Audio
+        const audio = new Audio("./efectos/GameSoundEffects - Resident Evil 2 Sound Effects - Cursor Select.mp3");
+        audio.play();
+
+        await delay(1000);
+
         window.location.href = "/formulario-inicial.html";
       }
 
       function showTutorial() {
         alert("Mostrando tutorial...");
         // Aquí iría la lógica para mostrar el tutorial
+      }
+
+      function delay(ms) {
+        return new Promise((resolve) => setTimeout(resolve, ms));
       }
     </script>
   </body>

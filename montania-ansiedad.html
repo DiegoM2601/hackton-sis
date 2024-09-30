@@ -63,8 +63,22 @@
     </div>
 
     <script>
-      function nextPage() {
-        window.location.href = "/salida-laberinto.html";
+      document.addEventListener("DOMContentLoaded", function () {
+        const audio = new Audio("./efectos/Free Audio Zone - Snowstorm Sound Effect - Winter Storm - Blizzard.mp3");
+        audio.loop = true;
+        audio.play();
+      });
+
+      async function nextPage() {
+        const audio = new Audio("./efectos/GameSoundEffects - Resident Evil 2 Sound Effects - Cursor Select.mp3");
+        audio.play();
+        await delay(1000);
+
+        window.location.href = "/abismo.html";
+      }
+
+      function delay(ms) {
+        return new Promise((resolve) => setTimeout(resolve, ms));
       }
     </script>
   </body>

@@ -57,17 +57,28 @@
     </div>
 
     <div class="bottom-container">
-      <p>
-        El jugador entra en un pasaje oscuro, donde cada paso resuena con una sensación de amenaza inminente. El miedo crece con cada decisión equivocada y el entorno parece
-        opresivo.
-      </p>
+      <p>Debes navegar por un espacio vacío, donde todo parece estar perdido. NO HAY VUELTA ATRÁS ...</p>
       <button class="button" onclick="nextPage()">Continuar</button>
       <button class="button" onclick="nextPage()">Retroceder</button>
     </div>
 
     <script>
-      function nextPage() {
-        window.location.href = "/entrada-euforia.html";
+      document.addEventListener("DOMContentLoaded", function () {
+        const audio = new Audio("./efectos/SOUND Effects Public Domain - Abyss Pad SOUND Effect.mp3");
+        audio.loop = true;
+        audio.play();
+      });
+
+      async function nextPage() {
+        const audio = new Audio("./efectos/GameSoundEffects - Resident Evil 2 Sound Effects - Cursor Select.mp3");
+        audio.play();
+        await delay(1000);
+
+        window.location.href = "/salida-laberinto.html";
+      }
+
+      function delay(ms) {
+        return new Promise((resolve) => setTimeout(resolve, ms));
       }
     </script>
   </body>

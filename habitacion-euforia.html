@@ -66,8 +66,21 @@
     </div>
 
     <script>
-      function nextPage() {
+      document.addEventListener("DOMContentLoaded", function () {
+        const audio = new Audio("./efectos/Ocean Sounds - Topic - Calm Ocean Sounds.mp3");
+        audio.loop = true;
+        audio.play();
+      });
+
+      async function nextPage() {
+        const audio = new Audio("./efectos/GameSoundEffects - Resident Evil 2 Sound Effects - Cursor Select.mp3");
+        audio.play();
+        await delay(1000);
         window.location.href = "/camino-miedo.html";
+      }
+
+      function delay(ms) {
+        return new Promise((resolve) => setTimeout(resolve, ms));
       }
     </script>
   </body>
