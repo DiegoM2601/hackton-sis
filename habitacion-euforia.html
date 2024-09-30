@@ -49,6 +49,37 @@
       .button:hover {
         background-color: #28a745;
       }
+      .centered-overlay {
+        position: fixed; /* O absolute si prefieres */
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /* background-color: rgba(0, 0, 0, 0.7); */
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+        z-index: 9999; /* Para que se muestre sobre todos los elementos */
+        animation: moveUpDown 3s ease-in-out infinite;
+        cursor: pointer;
+      }
+
+      /* Animación de movimiento arriba y abajo */
+      @keyframes moveUpDown {
+        0%,
+        100% {
+          transform: translate(-50%, -50%); /* Posición original */
+        }
+        50% {
+          transform: translate(-50%, -55%); /* Moverse hacia arriba ligeramente */
+        }
+      }
+
+      /* .visible {
+        display: inline-block;
+      } */
+      .invisible {
+        display: none;
+      }
     </style>
   </head>
   <body>
@@ -58,11 +89,37 @@
 
     <div class="bottom-container">
       <p>
-        Al entrar en esta sala, experimentas una sensación de alegría desbordante. Todo es brillante, los colores son vívidos, y hay una sensación de ligereza. Sin embargo, al poco
-        tiempo, la euforia se vuelve agotadora...
+        Al entrar en en este ambiente, experimentas una sensación de alegría desbordante. Todo es brillante, los colores son vívidos, y hay una sensación de ligereza. Sin embargo,
+        al poco tiempo, la euforia se vuelve agotadora...
       </p>
-      <button class="button" onclick="nextPage()">Buscar la salida</button>
-      <button class="button" onclick="nextPage()">Seguir explorando</button>
+      <!-- <button class="button" onclick="nextPage()">Buscar la salida</button>
+      <button class="button" onclick="nextPage()">Seguir explorando</button> -->
+    </div>
+
+    <div class="centered-overlay">
+      <!-- <p>Div centrado que no interfiere con otros elementos</p> -->
+      <img src="./img/sofa.png" width="300px" id="euforia1" style="margin-bottom: -3em" />
+
+      <div class="invisible" id="euforia1txt" style="background-color: white; padding: 50px">
+        <p style="color: black">Pregunta: "Este sofá parece un buen lugar para descansar. ¿Te sientas a disfrutar del momento o decides seguir explorando?"</p>
+        <button class="button opcionEuforia1" style="margin: 1em">Opción A: Sentarme y descansar. (Decisión reflexiva)</button>
+        <button class="button opcionEuforia1" style="margin: 1em">Opción B: Seguir explorando. (Decisión impulsiva)</button>
+      </div>
+
+      <img src="./img/espejo.png" width="300px" id="euforia2" class="invisible" />
+
+      <div class="invisible" id="euforia2txt" style="background-color: white; padding: 50px">
+        <p style="color: black">Pregunta: "Al mirar en el espejo, ¿qué ves en tu reflejo? ¿Te sientes alegre o hay algo que te preocupa?"</p>
+        <button class="button opcionEuforia2" style="margin: 1em">Opción A: Me siento alegre. (Decisión positiva)</button>
+        <button class="button opcionEuforia2" style="margin: 1em">Opción B: Hay algo que me preocupa. (Decisión reflexiva)</button>
+      </div>
+
+      <img src="./img/globos.png" width="300px" id="euforia3" class="invisible" />
+      <div class="invisible" id="euforia3txt" style="background-color: white; padding: 50px">
+        <p style="color: black">Pregunta: "Al ver estos globos, ¿te sientes inspirado a escribir tu propio mensaje positivo, o prefieres no involucrarte?"</p>
+        <button class="button opcionEuforia3" style="margin: 1em">Opción A: Escribir un mensaje. (Decisión reflexiva)</button>
+        <button class="button opcionEuforia3" style="margin: 1em">Opción B: No involucrarme. (Decisión impulsiva)</button>
+      </div>
     </div>
 
     <script>
@@ -82,6 +139,46 @@
       function delay(ms) {
         return new Promise((resolve) => setTimeout(resolve, ms));
       }
+
+      document.getElementById("euforia1").addEventListener("click", (e) => {
+        document.getElementById("euforia1txt").classList.toggle("invisible");
+        document.getElementById("euforia1").classList.toggle("invisible");
+      });
+
+      document.getElementById("euforia2").addEventListener("click", (e) => {
+        document.getElementById("euforia2txt").classList.toggle("invisible");
+        document.getElementById("euforia2").classList.toggle("invisible");
+      });
+
+      document.getElementById("euforia3").addEventListener("click", (e) => {
+        document.getElementById("euforia3txt").classList.toggle("invisible");
+        document.getElementById("euforia3").classList.toggle("invisible");
+      });
+
+      const opcionesEuforia1 = document.querySelectorAll(".opcionEuforia1");
+      opcionesEuforia1.forEach((e) => {
+        e.addEventListener("click", () => {
+          document.getElementById("euforia1txt").classList.toggle("invisible");
+          document.getElementById("euforia2").classList.toggle("invisible");
+        });
+      });
+
+      const opcionesEuforia2 = document.querySelectorAll(".opcionEuforia2");
+      opcionesEuforia2.forEach((e) => {
+        e.addEventListener("click", () => {
+          document.getElementById("euforia2txt").classList.toggle("invisible");
+          document.getElementById("euforia3").classList.toggle("invisible");
+        });
+      });
+
+      const opcionesEuforia3 = document.querySelectorAll(".opcionEuforia3");
+      opcionesEuforia3.forEach((e) => {
+        e.addEventListener("click", () => {
+          // document.getElementById("euforia2txt").classList.toggle("invisible");
+          // document.getElementById("euforia3").classList.toggle("invisible");
+          window.location.href = "camino-miedo.html";
+        });
+      });
     </script>
   </body>
 </html>
