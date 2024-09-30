@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cuestionario de Autoconocimiento</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #000000;
+        margin: 0;
+        padding: 20px;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+      .form-group {
+        margin-bottom: 15px;
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+        color: #555;
+      }
+      input,
+      textarea,
+      select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      button {
+        background-color: #28a745;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #218838;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Cuestionario de Autoconocimiento</h1>
+      <p>Este formulario busca comprender un poco más sobre ti. Todas tus respuestas son confidenciales.</p>
+      <form action="/submit" method="POST">
+        <div class="form-group">
+          <label for="name">Nombre:</label>
+          <input type="text" id="name" name="name" placeholder="Tu nombre completo" required />
+        </div>
+        <div class="form-group">
+          <label for="age">Edad:</label>
+          <input type="number" id="age" name="age" min="1" max="120" required />
+        </div>
+        <div class="form-group">
+          <label for="mood">Cuál es tu color favorito?</label>
+          <select id="mood" name="mood" required>
+            <option value="" disabled selected>Selecciona una opción</option>
+            <option value="feliz">Feliz</option>
+            <option value="triste">Triste</option>
+            <option value="ansioso">Ansioso</option>
+            <option value="neutral">Neutral</option>
+          </select>
+        </div>
+        <button type="submit" id="submit">Continuar</button>
+      </form>
+    </div>
+  </body>
+  <script>
+    document.getElementById("submit").addEventListener("click", (e) => {
+      e.preventDefault();
+      window.location.href = "/introduccion.html";
+    });
+  </script>
+</html>

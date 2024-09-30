@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Página con Imagen y Botones</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body,
+      html {
+        height: 100%;
+        font-family: Arial, sans-serif;
+      }
+      .background-image {
+        background-image: url("./img/escenario1.jpg"); /* Reemplaza con la ruta de tu imagen */
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 100%;
+        position: relative;
+      }
+      .centered-buttons {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+      }
+      .button {
+        display: inline-block;
+        background-color: rgba(0, 0, 0, 0.6);
+        color: white;
+        padding: 15px 30px;
+        margin: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 18px;
+      }
+      .button:hover {
+        background-color: rgba(255, 255, 255, 0.8);
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="background-image">
+      <div class="centered-buttons">
+        <button class="button" onclick="startGame()">Nueva Partida</button>
+        <button class="button" onclick="showOptions()">Opciones</button>
+        <button class="button" onclick="exitGame()">Salir</button>
+      </div>
+    </div>
+
+    <script>
+      function startGame() {
+        alert("PUERTA 1: ");
+      }
+
+      function showOptions() {
+        alert("Mostrando opciones...");
+      }
+
+      function exitGame() {
+        alert("Saliendo del juego...");
+      }
+    </script>
+  </body>
+</html>

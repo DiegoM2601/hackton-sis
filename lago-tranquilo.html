@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Div en la parte inferior</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body,
+      html {
+        height: 100%;
+        font-family: Arial, sans-serif;
+      }
+      .background-image {
+        background-image: url("./img/lago.jpeg"); /* Reemplaza con la ruta de tu imagen */
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 100%;
+        position: relative;
+      }
+      .bottom-container {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.6); /* Fondo semi-transparente */
+        color: white;
+        text-align: center;
+        padding: 20px;
+      }
+      .bottom-container p {
+        margin-bottom: 15px;
+        font-size: 18px;
+      }
+      .button {
+        background-color: limegreen;
+        color: black;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      .button:hover {
+        background-color: #28a745;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="background-image">
+      <!-- Contenido del fondo -->
+    </div>
+
+    <div class="bottom-container">
+      <p>
+        El jugador entra en un pasaje oscuro, donde cada paso resuena con una sensación de amenaza inminente. El miedo crece con cada decisión equivocada y el entorno parece
+        opresivo.
+      </p>
+      <button class="button" onclick="nextPage()">Continuar</button>
+      <button class="button" onclick="nextPage()">Retroceder</button>
+    </div>
+
+    <script>
+      function nextPage() {
+        window.location.href = "/entrada-euforia.html";
+      }
+    </script>
+  </body>
+</html>

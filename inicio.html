@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arcade - Menú Principal</title>
+    <style>
+      body {
+        background-color: black;
+        color: limegreen;
+        font-family: "Courier New", Courier, monospace;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        margin-top: 100px;
+      }
+      .ascii-art {
+        font-size: 18px;
+        line-height: 1.2;
+      }
+      .menu {
+        margin-top: 50px;
+      }
+      .menu-item {
+        margin: 15px 0;
+        padding: 10px;
+        border: 2px solid limegreen;
+        display: inline-block;
+        cursor: pointer;
+        width: 200px;
+        text-align: center;
+      }
+      .menu-item:hover {
+        background-color: limegreen;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="ascii-art">
+        <pre>
+          
+
+ /$$$$$$$$                                                  
+| $$_____/                                                  
+| $$        /$$$$$$$  /$$$$$$$  /$$$$$$   /$$$$$$   /$$$$$$ 
+| $$$$$    /$$_____/ /$$_____/ |____  $$ /$$__  $$ /$$__  $$
+| $$__/   |  $$$$$$ | $$        /$$$$$$$| $$  \ $$| $$$$$$$$
+| $$       \____  $$| $$       /$$__  $$| $$  | $$| $$_____/
+| $$$$$$$$ /$$$$$$$/|  $$$$$$$|  $$$$$$$| $$$$$$$/|  $$$$$$$
+|________/|_______/  \_______/ \_______/| $$____/  \_______/
+                                        | $$                
+                                        | $$                
+                                        |__/                
+
+
+        </pre>
+      </div>
+      <div class="menu">
+        <div class="menu-item" onclick="startGame()">Nueva Partida</div>
+        <div class="menu-item" onclick="showTutorial()">Tutorial</div>
+      </div>
+    </div>
+
+    <script>
+      function startGame() {
+        // alert("Comenzando nueva partida...");
+        // Aquí iría la lógica para iniciar el juego
+        window.location.href = "/formulario-inicial.html";
+      }
+
+      function showTutorial() {
+        alert("Mostrando tutorial...");
+        // Aquí iría la lógica para mostrar el tutorial
+      }
+    </script>
+  </body>
+</html>
